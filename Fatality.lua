@@ -1,9 +1,9 @@
 --[[
     		Fatality-Dark Interface
 
-    Author: tg h0n9xx 
+    Author: 4lpaca
     License: MIT
-    Github: ne dam
+    Github: https://github.com/4lpaca-pin/Fatality
 --]]
 
 -- Export Types --
@@ -5771,15 +5771,15 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 		end,
 
 		Init = function(Name: string,Folder: string)
-			if not isfolder(Folder or "Shitaro") then
-				makefolder(Folder or "Shitaro");	
+			if not isfolder(Folder or "Crystalhub") then
+				makefolder(Folder or "Crystalhub");	
 			end;
 
-			if not isfolder((Folder or "Shitaro").."/Config") then
-				makefolder((Folder or "Shitaro").."/Config");	
+			if not isfolder((Folder or "Crystalhub").."/Config") then
+				makefolder((Folder or "Crystalhub").."/Config");	
 			end;
 
-			local cfgPath = (Folder or "Shitaro").."/Config/"..tostring(Name);
+			local cfgPath = (Folder or "Crystalhub").."/Config/"..tostring(Name);
 
 			if not isfolder(cfgPath) then
 				makefolder(cfgPath)
@@ -9754,12 +9754,12 @@ function Fatality.new(Window: Window)
 					local flags = Fatal:GetFlagConfig()
 					flags.Info = {
 						Name = Window.Name,
-						Folder = "Shitaro",
+						Folder = "Crystalhub",
 						ConfigName = configName
 					}
 					
 					local json = game:GetService('HttpService'):JSONEncode(flags)
-					local path = "Shitaro/Config/"..Window.Name.."/"..configName..".json"
+					local path = "Crystalhub/Config/"..Window.Name.."/"..configName..".json"
 					
 					writefile(path, json)
 					
@@ -9775,7 +9775,7 @@ function Fatality.new(Window: Window)
 			LoadBtn.MouseButton1Click:Connect(function()
 				Fatality:PlayClickSound()
 				
-				local path = "Shitaro/Config/"..Window.Name.."/"..configName..".json"
+				local path = "Crystalhub/Config/"..Window.Name.."/"..configName..".json"
 				
 				if isfile(path) then
 					local json = readfile(path)
@@ -9795,7 +9795,7 @@ function Fatality.new(Window: Window)
 			DeleteBtn.MouseButton1Click:Connect(function()
 				Fatality:PlayClickSound()
 				showConfirm("Delete \""..configName.."\"?", function()
-					local path = "Shitaro/Config/"..Window.Name.."/"..configName..".json"
+					local path = "Crystalhub/Config/"..Window.Name.."/"..configName..".json"
 					
 					if isfile(path) then
 						delfile(path)
@@ -9822,7 +9822,7 @@ function Fatality.new(Window: Window)
 				end
 			end
 			
-			local configPath = "Shitaro/Config/"..Window.Name
+			local configPath = "Crystalhub/Config/"..Window.Name
 			
 			if isfolder(configPath) then
 				for _, file in pairs(listfiles(configPath)) do
@@ -9882,23 +9882,23 @@ function Fatality.new(Window: Window)
 			local flags = Fatal:GetFlagConfig()
 			flags.Info = {
 				Name = Window.Name,
-				Folder = "Shitaro",
+				Folder = "Crystalhub",
 				ConfigName = configName
 			}
 			
 			local json = game:GetService('HttpService'):JSONEncode(flags)
-			local path = "Shitaro/Config/"..Window.Name.."/"..configName..".json"
+			local path = "Crystalhub/Config/"..Window.Name.."/"..configName..".json"
 			
-			if not isfolder("Shitaro") then
-				makefolder("Shitaro")
+			if not isfolder("Crystalhub") then
+				makefolder("Crystalhub")
 			end
 			
-			if not isfolder("Shitaro/Config") then
-				makefolder("Shitaro/Config")
+			if not isfolder("Crystalhub/Config") then
+				makefolder("Crystalhub/Config")
 			end
 			
-			if not isfolder("Shitaro/Config/"..Window.Name) then
-				makefolder("Shitaro/Config/"..Window.Name)
+			if not isfolder("Crystalhub/Config/"..Window.Name) then
+				makefolder("Crystalhub/Config/"..Window.Name)
 			end
 			
 			writefile(path, json)
@@ -10031,7 +10031,7 @@ function Fatality.new(Window: Window)
 		InfoText.Size = UDim2.new(1, -20, 1, -20)
 		InfoText.ZIndex = 102
 		InfoText.FontFace = Fatality.FontSemiBold
-		InfoText.Text = "This script created by @shitarouse / @entiizk (its my telegram), my dc - pastinguser.\n\nNote -  im russian boy and i love femboys :)"
+		InfoText.Text = "This script created by @Crystalhubuse / @entiizk (its my telegram), my dc - pastinguser.\n\nNote -  im russian boy and i love femboys :)"
 		InfoText.TextColor3 = Color3.fromRGB(255, 255, 255)
 		InfoText.TextSize = 13.000
 		InfoText.TextTransparency = 0
