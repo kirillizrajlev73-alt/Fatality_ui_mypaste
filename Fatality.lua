@@ -1,9 +1,9 @@
 --[[
     		Fatality-Dark Interface
 
-    Author: 4lpaca
+    Author: tg h0n9xx 
     License: MIT
-    Github: https://github.com/4lpaca-pin/Fatality
+    Github: ne dam
 --]]
 
 -- Export Types --
